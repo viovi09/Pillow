@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Jumat yang Berkah ini Pilloww!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffebf0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+            z-index: 10;
+        }
+        h1 {
+            color: #ff4d6d;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff4d6d;
+            animation: heartbeat 1s infinite;
+            cursor: pointer;
+        }
+        .heart:hover {
+            transform: scale(1.5);
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .gif-container img, .cat-container img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gif-container img:hover, .cat-container img:hover {
+            transform: scale(1.2);
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+            background: #ff4d6d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #d83a5d;
+        }
+        .falling-hearts {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="falling-hearts" id="hearts"></div>
+    <div class="container">
+        <h1>Selamat Hari Jumat yang Berkah ini Pillow! 💖</h1>
+        <p>Tahun ini pasti lu bakal lulus dengan kebanggaan dan kemudahan! ✨</p>
+        <p class="heart" onclick="alert('apa lo liat-liat!!!!! 💖')">❤️</p>
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Love Animation" onclick="alert('lucu yak kek gua! 💕')">
+            <img src="https://media.giphy.com/media/l0HlRincOBSIi5oxG/giphy.gif" alt="Cute Animation" onclick="alert('woi woii!!! lu harus liat apa yg lu minta enihh')">
+        </div>
+        <div class="cat-container">
+            <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cat 1" onclick="alert('pov gua tudey')">
+            <img src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif" alt="Cat 2" onclick="alert('udeh kan ni gua buatin!!!')">
+            <img src="https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif" alt="Cat 3" onclick="alert('dururururuu')">
+        </div>
+        <button class="button" onclick="showMessage()">Klik Aku!</button>
+    </div>
+    <script>
+        function showMessage() {
+            alert('Semangat terus yh bimbingan nya! 🎉💖');
+        }
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.style.position = "absolute";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = "-20px";
+            heart.style.fontSize = Math.random() * 20 + 20 + "px";
+            heart.style.animation = "fall 5s linear";
+            document.getElementById("hearts").appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
